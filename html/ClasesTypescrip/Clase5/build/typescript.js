@@ -43,7 +43,7 @@ let mostrarPersona = function (nombre, Edad = calcularEdad()) {
         console.warn(`la edad no fue enviada`);
     }
 };
-mostrarPersona("Diego");
+mostrarPersona("German");
 let duplicador = function (n) {
     return n * 2;
 };

@@ -4,86 +4,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
+    <title>Ejercicio 2</title>
 </head>
 <body>
     <pre>
-
-<h1>Ejercicio 1 TypeScrip</h1>
-
-<h2>Tipos de Variables</h2>
-
-let numero:number = 75;
-let nombre1: string ="German";
-let nombre2: string ="Airin";
-let nombre3: string ="Deider";
-
-<h3>Mensajes</h3>
-
-console.log("numero");
-
-console.log (`el numero es ${numero}`);
-console.log (`el nombre es ${nombre1}`);
-console.log (`el nombre es ${nombre2}`);
-console.log (`el nombre es ${nombre3}`);
-
-<h3>Arrays</h3>
-
-let lista: string[]=["Riohacha ", "Maicao","Dibulla"];
-console.log(lista)
-
-for (let index = 0; index < lista.length; index++) {
-    console.log(lista[index])
-    
-}
+        function division(x:number, y:number): number {
 
 
-lista.forEach(element => {
-    console.log(element)
-});
-
-<h3>Tuplas</h3>
-
-let tuple:[number,string]=[1,"German Mendoza"]
-console.log(tuple[1])
-
-let tuple2:[number,string,string,number]=[1,"German","Mendoza",44]
-console.log(tuple2[1])
-
-tuple2.forEach(element => {
-    console.log(element)
-
-});
-
-<h3>Any</h3>
-
-let miVariable:any = "Saludos"
-console.log(miVariable)
-
-miVariable = 75;
-console.log(miVariable)
-
-
-<h3>Objeto</h3>
-
-interface persona{
-    cedula: number;
-    nombre: string;
-    apellido: string;
-    edad: number
-}
-
-const persona1:persona = {
-    cedula: 1118868114,
-    nombre: "German",
-    apellido: "Mendoza",
-    edad: 23
-
-}
-
-console.log(persona1.nombre + persona1.apellido)
-
+            let res =x + y
+         console.log(`${x} + ${y} =${res}`)
+            return res
+        }
+        
+        division(5,3);
+        function sumar(x:number, y:number): number {
+        
+        
+            let suma =x + y
+         console.log(`${x} + ${y} =${suma}`)
+            return suma
+        }
+        let x=sumar(3,6)
+        
+        console.log(`la suma de los numeros es ${x}`)
+        
+        
+        let funcion:( m :number , n :number)=>number =function(m: number, n:number){
+        
+        let resta =m-n
+        console.log(`${m} - ${n} =${resta}`)
+        return resta
+        
+        
+        }
+        console.log(funcion(62,4))
+        
+        let multiplicar:(m:number, n:number)=>number
+        multiplicar=(m,n) => m*n
+        console.log(multiplicar(5,4))
+        
+        //parametros opciomales
+        
+        function sumar2(x:number, y?:number): number {
+        
+        if (y==undefined){
+        
+        return x
+        
+        }else{
+           let suma =x + y
+        
+            return suma  
+        }
+           
+        }
+        let suma01=sumar2(2)
+        let suma02=sumar2(2,3)
+        console.log(`el resultado de la suma 1 es =${suma01}`)
+        console.log(`el resultado de la suma 2 es =${suma02}`)
+        
+        function calcularEdad():number{
+        return 18
+        
+        }
+        
+        let mostrarPersona=function(nombre: string, Edad: number =calcularEdad()) {
+        
+            console.info(`nombre : ${nombre} - Edad : ${Edad}`)
+        
+        
+        
+            if(Edad==18){
+        
+                console.warn(`la edad no fue enviada`)
+            }
+            
+        }
+        mostrarPersona("German")
+        
+        
+        //llamar una funcion dentro de otra
+        
+        
+        let duplicador =function(n:number):number{
+        
+        return n*2
+        
+        }
+        
+        let triplicador= function(n:number):number{
+        
+            return n*3
+        
+        }
+        
+        let potenciadorALaDos=function(n:number):number{
+        
+        return n*n
+        
+        }
+        
+        function sumar50(f:(n:number)=>number,y :number){
+        
+            return f(y) +50
+        
+        }
+        console.log(sumar50(duplicador,20))
+        console.log(sumar50(triplicador,20))
+        console.log(sumar50(potenciadorALaDos,20))
+        console.log(sumar50(duplicador,10));
     </pre>
-    <script src="/build/typescript.js"></script>
 </body>
+<script src="/build/typescript.js"></script>
+
 </html>

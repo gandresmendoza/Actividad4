@@ -70,7 +70,7 @@ let mostrarPersona=function(nombre: string, Edad: number =calcularEdad()) {
     }
     
 }
-mostrarPersona("Diego")
+mostrarPersona("German")
 
 
 //llamar una funcion dentro de otra
